@@ -1,11 +1,14 @@
 version: '3'
 
+
 services:
   glowroot-central-db:
+    container_name: glowroot-central-db
     image: cassandra
     networks:
      - glowroot-central
   glowroot-central:
+    container_name: glowroot-central-server
     image: glowroot/glowroot-central
     ports:
       - "0.0.0.0:4000:4000"
